@@ -48,7 +48,7 @@
 
 /* Paragraph Styling */
 #main-cta p {
-    font-size: 1.25rem; /* 20px / 16 = 1.25rem */
+    font-size: 1.25rem; /* 16px */
     color: var(--neutral-7); /* Neutral gray for readability */
     line-height: 1.6; /* Improve readability with line height */
     margin: 0; /* Remove all default margins */

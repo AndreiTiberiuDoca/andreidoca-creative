@@ -83,3 +83,6 @@ document.addEventListener("DOMContentLoaded", () => {
     // Initialize by showing cards from the first category (Mobile Applications)
     filterButtons[0].click(); // Simulate click on the first button
 });
+
+
+

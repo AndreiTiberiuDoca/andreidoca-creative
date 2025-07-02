@@ -26,8 +26,8 @@
 .project-card {
     position: relative;
     width: 100%; /* Full width by default */
-    max-width: 75rem; /* Maximum width */
-    height: 30rem; /* Fixed height */
+    max-width: 70rem; /* Maximum width */
+    height: 25rem; /* Fixed height */
     border: 1px solid var(--neutral-4); /* Add border around each project card */
     border-radius: 0.5rem; /* Keep the rounded corners */
     overflow: hidden; /* Ensure images don't overflow */

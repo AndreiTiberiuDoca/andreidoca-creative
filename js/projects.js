@@ -84,5 +84,33 @@ document.addEventListener("DOMContentLoaded", () => {
     filterButtons[0].click(); // Simulate click on the first button
 });
 
+// Select the modal content and overlay
+const modalOverlay = document.getElementById('modal-overlay');
+const modalBody = document.getElementById('modal-body');
 
+// Function to reset modal scroll position
+function resetModalScroll() {
+    if (modalBody) {
+        modalBody.scrollTop = 0; // Resetează scroll-ul la 0
+    }
+}
+
+// Dacă folosești un eveniment de click pe carduri pentru a deschide modalul:
+document.querySelectorAll('.project-card').forEach(card => {
+    card.addEventListener('click', () => {
+        const modalId = card.getAttribute('data-modal-id');
+        const modalContent = document.getElementById(modalId);
+        if (modalContent) {
+            modalBody.innerHTML = '';
+            modalBody.appendChild(modalContent.cloneNode(true));
+            modalOverlay.style.display = 'flex';
+            resetModalScroll(); // Resetează scroll-ul la fiecare deschidere
+        }
+    });
+});
+
+// Eveniment pentru butonul de închidere
+document.querySelector('.close-modal').addEventListener('click', () => {
+    modalOverlay.style.display = 'none';
+});
 

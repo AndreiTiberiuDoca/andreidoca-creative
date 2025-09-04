@@ -1,249 +1,717 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Meta Tags -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Explore the creative portfolio of Andrei Doca, a skilled UI/UX and Product Designer specializing in digital solutions for B2B, healthcare, and more.">
-    <meta name="keywords" content="UI/UX Designer, Product Designer, Digital Solutions, Andrei Doca Portfolio">
-    <meta name="author" content="Andrei Doca">
-
-    <!-- Title for SEO -->
-    <title>Andrei Doca - UI/UX & Product Designer | Portfolio</title>
-
-    <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href="assets/icons/Browser-Icon.svg">
-
-    <!-- CSS Links -->
-    <link rel="stylesheet" href="css/colors.css">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/header.css">
-    <link rel="stylesheet" href="css/main-section.css">
-    <link rel="stylesheet" href="css/projects.css">
-    <link rel="stylesheet" href="css/core-values.css">
-    <link rel="stylesheet" href="css/footer.css">
-    <link rel="stylesheet" href="css/components.css">
-    <link rel="stylesheet" href="css/collabroation.css">
+    <title>Andrei Doca - UI/UX Designer</title>
 
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+    <!-- Base Styles -->
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Component Styles -->
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/hero.css">
+    <link rel="stylesheet" href="css/about.css">
+    <link rel="stylesheet" href="css/services.css">
+    <link rel="stylesheet" href="css/projects.css">
+    <link rel="stylesheet" href="css/footer.css">
 </head>
+
 <body>
-    <!-- Header -->
-    <header>
-        <div class="header-container">
-            <!-- Logo -->
-            <div class="logo">
-                <a href="#">
-                    <span class="logo-name">Andrei Doca</span>
-                </a>
+
+  <!-- Header Section -->
+<header class="header">
+    <div class="header-container">
+        <!-- Logo/Brand -->
+        <div class="logo">
+            <a href="#home" class="logo-link">Andrei Doca</a>
+        </div>
+
+        <!-- Desktop Navigation -->
+        <nav class="nav-desktop">
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="#home" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#about" class="nav-link">Design Philosophy</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#services" class="nav-link">Services</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#projects" class="nav-link">Projects</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#contact" class="nav-link">Contact</a>
+                </li>
+            </ul>
+        </nav>
+
+        <!-- Get In Touch Button -->
+        <button class="cta-button">Get In Touch</button>
+
+        <!-- Mobile Menu Toggle -->
+        <div class="mobile-menu-toggle" id="mobile-menu-toggle">
+            <!-- Placeholder for hamburger SVG - replace src with your SVG -->
+            <img src="data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M3 12H21' stroke='%23374151' stroke-width='2' stroke-linecap='round'/%3E%3Cpath d='M3 6H21' stroke='%23374151' stroke-width='2' stroke-linecap='round'/%3E%3Cpath d='M3 18H21' stroke='%23374151' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E" alt="Menu" class="hamburger-icon">
+        </div>
+    </div>
+
+    <!-- Mobile Navigation Menu -->
+    <nav class="nav-mobile" id="nav-mobile">
+        <div class="nav-mobile-content">
+            <ul class="nav-mobile-menu">
+                <li class="nav-mobile-item">
+                    <a href="#home" class="nav-mobile-link">Home</a>
+                </li>
+                <li class="nav-mobile-item">
+                    <a href="#about" class="nav-mobile-link">Design Philosophy</a>
+                </li>
+                <li class="nav-mobile-item">
+                    <a href="#services" class="nav-mobile-link">Services</a>
+                </li>
+                <li class="nav-mobile-item">
+                    <a href="#projects" class="nav-mobile-link">Projects</a>
+                </li>
+                <li class="nav-mobile-item">
+                    <a href="#contact" class="nav-mobile-link">Contact</a>
+                </li>
+            </ul>
+            <div class="nav-mobile-cta">
+                <button class="cta-button mobile-cta">Get In Touch</button>
+            </div>
+        </div>
+    </nav>
+</header>
+
+ <!-- Hero Section -->
+<section class="hero-section" id="home">
+    <div class="hero-container">
+        <!-- Left Content -->
+        <div class="hero-content">
+            <!-- Available Badge -->
+            <div class="availability-badge">
+                <div class="status-dot"></div>
+                <span class="status-text">Available for new projects</span>
             </div>
 
-            <!-- Navigation -->
-            <nav>
-                <button id="mobile-menu" class="menu-toggle">
-                    <img src="assets/icons/Menu-Hamburger-Default.svg" alt="Menu Icon">
-                </button>
-                <ul class="nav-links">
-                    <li><a href="#about">Home</a></li>
-                    <li><a href="#core-values">Design Philosophy</a></li>
-                    <li><a href="#projects">Projects</a></li>
-                </ul>
-            </nav>
-            <!-- Contact Me Button -->
-            <a href="mailto:andreitiberiu.doca@gmail.com" class="contact-btn">Contact Me</a>
-        </div>
-    </header>
-<!-- Main CTA Section -->
-<section id="main-cta">
-    <div class="container">
-        <!-- Text Block -->
-        <div class="text-block">
-            <div class="tag">UI/UX Product Designer</div>
-            <h1>Hello, I’m Andrei Doca</h1>
-            <p>
-              Senior UI/UX Product Designer focused on complex B2B and enterprise systems in logistics, healthcare, and SaaS. I turn intricate workflows into intuitive experiences that balance usability, scalability, and business impact.
+            <!-- Main Heading -->
+            <h1 class="hero-title">
+                <span class="name">Andrei Doca</span>
+                <span class="profession">
+                    <span class="profession-highlight">UI/UX</span>
+                    <span class="profession-text">Designer</span>
+                </span>
+            </h1>
+
+            <!-- Description -->
+            <p class="hero-description">
+                UI/UX Product Designer passionate about creating intuitive digital experiences. I specialize in user-centered design and brand identity for innovative products.
             </p>
-            <!-- Social Media Links -->
-            <div class="social-links">
-               
-                 <!-- Download CV Button -->
-            <a href="assets/cv/Andrei Doca - Product & UX UI Designer.pdf" class="download-cv-btn" download="Andrei_Doca_CV.pdf">Download CV</a>
+
+            <!-- Action Buttons -->
+            <div class="hero-actions">
+                <button class="btn-primary" id="view-work-btn">
+                    <span>View My Work</span>
+                    <svg class="btn-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                        <polyline points="12,5 19,12 12,19"></polyline>
+                    </svg>
+                </button>
+                
+                <button class="btn-secondary" id="download-cv-btn">
+                    <svg class="btn-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                        <polyline points="7,10 12,15 17,10"></polyline>
+                        <line x1="12" y1="15" x2="12" y2="3"></line>
+                    </svg>
+                    <span>Download CV</span>
+                </button>
+            </div>
+
+            <!-- Statistics -->
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <div class="stat-number">5+</div>
+                    <div class="stat-label">Years Experience</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">25+</div>
+                    <div class="stat-label">Projects Completed</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">10+</div>
+                    <div class="stat-label">Happy Clients</div>
+                </div>
             </div>
         </div>
-        <!-- Image -->
-        <div class="image">
-            <img src="assets/images/48d832a5-432a-4bae-86e8-4a0dd2a985c4 1.png" alt="Andrei Doca - UI/UX Designer">
+
+        <!-- Right Content - Profile Image -->
+        <div class="hero-image">
+            <div class="image-container">
+                <div class="profile-image">
+                    <!-- Profile image placeholder -->
+                    <div class="image-placeholder">
+                        <div class="placeholder-avatar"></div>
+                        <p class="placeholder-text">Add your photo here</p>
+                        <p class="placeholder-size">396x396px</p>
+                    </div>
+                    
+                    <!-- Decorative elements -->
+                    <div class="decoration decoration-1"></div>
+                    <div class="decoration decoration-2">
+                        <span class="decoration-text">UI</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- About/Design Philosophy Section -->
+<section class="about-section" id="about">
+    <div class="about-container">
+        <!-- Section Header -->
+        <div class="about-header">
+            <p class="section-subtitle">Design Philosophy</p>
+            <h2 class="section-title">My Approach to Design</h2>
+            <p class="section-description">
+                These guiding principles shape every project I work on, ensuring that design solutions are both beautiful and functionally excellent.
+            </p>
+        </div>
+
+        <!-- Principles Grid -->
+        <div class="principles-grid">
+            <!-- Principle 1: Design Excellence -->
+            <div class="principle-card">
+                <div class="principle-icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
+                    </svg>
+                </div>
+                <div class="principle-content">
+                    <h3 class="principle-title">Design Excellence</h3>
+                    <p class="principle-description">
+                        Creating visually stunning and intuitive interfaces that capture attention and guide users effortlessly through their journey.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Principle 2: User-Centered Focus -->
+            <div class="principle-card">
+                <div class="principle-icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                        <circle cx="12" cy="7" r="4"></circle>
+                    </svg>
+                </div>
+                <div class="principle-content">
+                    <h3 class="principle-title">User-Centered Focus</h3>
+                    <p class="principle-description">
+                        Every design decision is rooted in user research and testing, ensuring that the final product truly serves its intended audience.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Principle 3: Technical Understanding -->
+            <div class="principle-card">
+                <div class="principle-icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="16,18 22,12 16,6"></polyline>
+                        <polyline points="8,6 2,12 8,18"></polyline>
+                    </svg>
+                </div>
+                <div class="principle-content">
+                    <h3 class="principle-title">Technical Understanding</h3>
+                    <p class="principle-description">
+                        Bridging the gap between design and development by understanding technical constraints and possibilities.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Principle 4: Strategic Thinking -->
+            <div class="principle-card">
+                <div class="principle-icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="9" cy="12" r="1"></circle>
+                        <circle cx="15" cy="12" r="1"></circle>
+                        <circle cx="12" cy="9" r="1"></circle>
+                        <circle cx="12" cy="15" r="1"></circle>
+                        <path d="M8 21l4-7 4 7"></path>
+                        <path d="M16 3l-4 7-4-7"></path>
+                    </svg>
+                </div>
+                <div class="principle-content">
+                    <h3 class="principle-title">Strategic Thinking</h3>
+                    <p class="principle-description">
+                        Aligning design solutions with business objectives to create meaningful impact and measurable results.
+                    </p>
+                </div>
+            </div>
+        </div>
+</section>
+
+   <!-- Services Section -->
+<section class="services-section" id="services">
+    <div class="services-container">
+        <!-- Section Header -->
+        <div class="services-header">
+            <p class="section-subtitle">My Services</p>
+            <h2 class="section-title">How I Can Help You</h2>
+            <p class="section-description">
+                Specialized digital design solutions focused on creating exceptional user experiences
+            </p>
+        </div>
+
+        <!-- Services Grid -->
+        <div class="services-grid">
+            <!-- UI/UX Product Design Card -->
+            <div class="service-card primary-card">
+                <div class="card-layout">
+                    <!-- Left Side -->
+                    <div class="card-left">
+                        <!-- Header with icon and badge -->
+                        <div class="card-header">
+                            <div class="service-icon blue-icon">
+                                <svg width="32" height="32" viewBox="0 0 24 24" fill="none">
+                                    <rect x="3" y="4" width="18" height="12" rx="2" stroke="currentColor" stroke-width="2" fill="none"/>
+                                    <path d="M8 4v12M16 4v12" stroke="currentColor" stroke-width="2"/>
+                                </svg>
+                            </div>
+                            <div class="service-badge primary-badge">Primary Focus</div>
+                        </div>
+
+                        <!-- Title -->
+                        <h3 class="service-title">UI/UX Product Design</h3>
+
+                        <!-- Description -->
+                        <p class="service-description">
+                            End-to-end digital product design from concept to implementation. I handle everything from user research and wireframing to high-fidelity designs and developer collaboration.
+                        </p>
+
+                        <!-- Feature Tags -->
+                        <div class="feature-tags">
+                            <div class="tag-row">
+                                <span class="feature-tag primary-tag">User Research & Testing</span>
+                                <span class="feature-tag primary-tag">Wireframes & User Flows</span>
+                            </div>
+                            <div class="tag-row">
+                                <span class="feature-tag primary-tag">Design Systems</span>
+                                <span class="feature-tag primary-tag">Web App Design</span>
+                            </div>
+                            <div class="tag-row">
+                                <span class="feature-tag primary-tag">Client Communication</span>
+                                <span class="feature-tag primary-tag">Developer Handoff</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right Side -->
+                    <div class="card-right">
+                        <div class="additional-service">
+                            <div class="service-icon-small blue-icon-small">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                                    <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" stroke="currentColor" stroke-width="2"/>
+                                    <circle cx="8.5" cy="7" r="4" stroke="currentColor" stroke-width="2"/>
+                                    <line x1="20" y1="8" x2="20" y2="14" stroke="currentColor" stroke-width="2"/>
+                                    <line x1="23" y1="11" x2="17" y2="11" stroke="currentColor" stroke-width="2"/>
+                                </svg>
+                            </div>
+                            <div class="service-info">
+                                <h4>Client Collaboration</h4>
+                                <p>Direct communication throughout the project</p>
+                            </div>
+                        </div>
+
+                        <div class="additional-service">
+                            <div class="service-icon-small blue-icon-small">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                                    <rect x="2" y="2" width="20" height="8" rx="2" stroke="currentColor" stroke-width="2"/>
+                                    <rect x="2" y="14" width="20" height="8" rx="2" stroke="currentColor" stroke-width="2"/>
+                                    <line x1="6" y1="6" x2="6" y2="6" stroke="currentColor" stroke-width="2"/>
+                                    <line x1="6" y1="18" x2="6" y2="18" stroke="currentColor" stroke-width="2"/>
+                                </svg>
+                            </div>
+                            <div class="service-info">
+                                <h4>Complete Process</h4>
+                                <p>From wireframes to final implementation</p>
+                            </div>
+                        </div>
+
+                        <div class="additional-service">
+                            <div class="service-icon-small blue-icon-small">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                                    <circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="2"/>
+                                    <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1 1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z" stroke="currentColor" stroke-width="2"/>
+                                </svg>
+                            </div>
+                            <div class="service-info">
+                                <h4>Design Systems</h4>
+                                <p>Scalable and maintainable design foundations</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Brand Identity Card -->
+            <div class="service-card secondary-card">
+                <div class="card-layout">
+                    <!-- Left Side -->
+                    <div class="card-left">
+                        <!-- Header with icon and badge -->
+                        <div class="card-header">
+                            <div class="service-icon purple-icon">
+                                <svg width="32" height="32" viewBox="0 0 24 24" fill="none">
+                                    <path d="M12 2L2 7l10 5 10-5-10-5z" stroke="currentColor" stroke-width="2" fill="none"/>
+                                    <path d="M2 17l10 5 10-5" stroke="currentColor" stroke-width="2"/>
+                                    <path d="M2 12l10 5 10-5" stroke="currentColor" stroke-width="2"/>
+                                </svg>
+                            </div>
+                            <div class="service-badge secondary-badge">Additional Service</div>
+                        </div>
+
+                        <!-- Title -->
+                        <h3 class="service-title">Brand Identity</h3>
+
+                        <!-- Description -->
+                        <p class="service-description">
+                            I also create comprehensive brand identities that capture the essence of your business and resonate with your target audience. While my primary focus is on UI/UX design, I offer this service as a complement to my main work.
+                        </p>
+
+                        <!-- Feature Tags -->
+                        <div class="feature-tags">
+                            <div class="tag-row">
+                                <span class="feature-tag secondary-tag">Logo Design</span>
+                                <span class="feature-tag secondary-tag">Visual Identity</span>
+                            </div>
+                            <div class="tag-row">
+                                <span class="feature-tag secondary-tag">Brand Guidelines</span>
+                                <span class="feature-tag secondary-tag">Brand Assets</span>
+                            </div>
+                        </div>
+
+                        <!-- Secondary Note -->
+                        <p class="service-note">Offered as a secondary service alongside UI/UX projects</p>
+                    </div>
+
+                    <!-- Right Side -->
+                    <div class="card-right">
+                        <div class="additional-service">
+                            <div class="service-icon-small purple-icon-small">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                                    <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/>
+                                    <path d="M8 14s1.5 2 4 2 4-2 4-2" stroke="currentColor" stroke-width="2"/>
+                                    <line x1="9" y1="9" x2="9.01" y2="9" stroke="currentColor" stroke-width="2"/>
+                                    <line x1="15" y1="9" x2="15.01" y2="9" stroke="currentColor" stroke-width="2"/>
+                                </svg>
+                            </div>
+                            <div class="service-info">
+                                <h4>Visual Identity</h4>
+                                <p>Creating memorable and cohesive brand visuals</p>
+                            </div>
+                        </div>
+
+                        <div class="additional-service">
+                            <div class="service-icon-small purple-icon-small">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" stroke="currentColor" stroke-width="2"/>
+                                    <polyline points="14,2 14,8 20,8" stroke="currentColor" stroke-width="2"/>
+                                    <line x1="16" y1="13" x2="8" y2="13" stroke="currentColor" stroke-width="2"/>
+                                    <line x1="16" y1="17" x2="8" y2="17" stroke="currentColor" stroke-width="2"/>
+                                    <polyline points="10,9 9,9 8,9" stroke="currentColor" stroke-width="2"/>
+                                </svg>
+                            </div>
+                            <div class="service-info">
+                                <h4>Brand Guidelines</h4>
+                                <p>Comprehensive style guides for consistent application</p>
+                            </div>
+                        </div>
+
+                        <div class="additional-service">
+                            <div class="service-icon-small purple-icon-small">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                                    <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" stroke="currentColor" stroke-width="2"/>
+                                    <circle cx="8.5" cy="7" r="4" stroke="currentColor" stroke-width="2"/>
+                                    <line x1="20" y1="8" x2="20" y2="14" stroke="currentColor" stroke-width="2"/>
+                                    <line x1="23" y1="11" x2="17" y2="11" stroke="currentColor" stroke-width="2"/>
+                                </svg>
+                            </div>
+                            <div class="service-info">
+                                <h4>Complementary Service</h4>
+                                <p>Perfect addition to UI/UX projects when brand identity is needed</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </section>
 
-    <!-- Core Values Section -->
-    <section id="core-values">
-        <div class="container">
-            <!-- Core Values Header -->
-            <div class="core-values-header">
-                <img src="assets/icons/Core-Values.svg" alt="Core Values Icon" class="core-values-desktop">
-            </div>
-            <!-- Value Cards -->
-            <div class="value-card">
-                <div class="icon-container">
-                    <img src="assets/icons/Value-1.svg" alt="Commitment Icon">
+   <!-- Projects Section -->
+<section class="projects-section" id="projects">
+    <div class="projects-container">
+        <!-- Section Header -->
+        <div class="projects-header">
+            <p class="section-subtitle">Featured Work</p>
+            <h2 class="section-title">Projects That Make a Difference</h2>
+            <p class="section-description">
+                A showcase of my latest work in UI/UX design and brand identity, demonstrating my approach to solving complex design challenges.
+            </p>
+        </div>
+
+        <!-- Filter Navigation Buttons -->
+        <div class="filter-navigation">
+            <button class="filter-btn active" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="web-app">Web App</button>
+            <button class="filter-btn" data-filter="mobile">Mobile</button>
+            <button class="filter-btn" data-filter="websites">Websites</button>
+        </div>
+
+        <!-- Projects Grid -->
+        <div class="projects-grid">
+            <!-- Analytics Dashboard -->
+            <div class="project-card" data-category="web-app" data-behance="https://www.behance.net/gallery/123456789/Analytics-Dashboard">
+                <div class="project-image">
+                    <div class="image-placeholder">
+                        <p class="placeholder-text">Analytics Dashboard Image</p>
+                        <p class="placeholder-size">400x300px</p>
+                    </div>
                 </div>
-                <div class="text-container">
-                    <h3>I Deliver on Design</h3>
-                    <p>
-                        I believe in building trust through consistent delivery. Whether it’s a prototype, a design system, or a final product, I ensure every output is well-researched, user-centered, and aligned with business goals.
+                <div class="project-content">
+                    <div class="project-tag project-tag-web">Web App</div>
+                    <h3 class="project-title">Analytics Dashboard</h3>
+                    <p class="project-description">
+                        Modern web dashboard with data visualization and real-time analytics.
                     </p>
+                    <div class="project-technologies">
+                        <span class="tech-tag">UI/UX</span>
+                        <span class="tech-tag">Dashboard</span>
+                        <span class="tech-tag">Analytics</span>
+                    </div>
                 </div>
             </div>
-            <div class="value-card reverse">
-                <div class="icon-container">
-                    <img src="assets/icons/Value-2.svg" alt="Passion Icon">
+
+            <!-- Banking Mobile App -->
+            <div class="project-card" data-category="mobile" data-behance="https://www.behance.net/gallery/123456790/Banking-Mobile-App">
+                <div class="project-image">
+                    <div class="image-placeholder">
+                        <p class="placeholder-text">Banking App Image</p>
+                        <p class="placeholder-size">400x300px</p>
+                    </div>
                 </div>
-                <div class="text-container">
-                    <h3>I Solve Real Problems</h3>
-                    <p>
-                        My work starts with understanding the real problem — not just the surface. I combine user research, technical feasibility, and business goals to create solutions that are not only usable but also sustainable. Every pixel I place is driven by purpose.
+                <div class="project-content">
+                    <div class="project-tag project-tag-mobile">Mobile</div>
+                    <h3 class="project-title">Banking Mobile App</h3>
+                    <p class="project-description">
+                        Secure mobile banking app with intuitive user interface and seamless experience.
                     </p>
+                    <div class="project-technologies">
+                        <span class="tech-tag">Mobile</span>
+                        <span class="tech-tag">FinTech</span>
+                        <span class="tech-tag">UX</span>
+                    </div>
                 </div>
             </div>
-            <div class="value-card">
-                <div class="icon-container">
-                    <img src="assets/icons/Value-3.svg" alt="Collaboration Icon">
+
+            <!-- Brand Identity -->
+            <div class="project-card" data-category="websites" data-behance="https://www.behance.net/gallery/123456791/Brand-Identity-System">
+                <div class="project-image">
+                    <div class="image-placeholder">
+                        <p class="placeholder-text">Brand Identity Image</p>
+                        <p class="placeholder-size">400x300px</p>
+                    </div>
                 </div>
-                <div class="text-container">
-                    <h3>I Bridge Teams</h3>
-                    <p>
-                        I thrive in cross-functional teams where designers, developers, and stakeholders collaborate closely. I believe the best outcomes happen when design and engineering speak the same language — so communicate early, and act as a bridge between worlds.
+                <div class="project-content">
+                    <div class="project-tag project-tag-website">Websites</div>
+                    <h3 class="project-title">Brand Identity</h3>
+                    <p class="project-description">
+                        Complete brand identity systems with logo design and visual guidelines.
                     </p>
+                    <div class="project-technologies">
+                        <span class="tech-tag">Branding</span>
+                        <span class="tech-tag">Logo</span>
+                        <span class="tech-tag">Identity</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- E-Commerce Platform -->
+            <div class="project-card" data-category="web-app" data-behance="https://www.behance.net/gallery/123456792/E-Commerce-Platform">
+                <div class="project-image">
+                    <div class="image-placeholder">
+                        <p class="placeholder-text">E-Commerce Image</p>
+                        <p class="placeholder-size">400x300px</p>
+                    </div>
+                </div>
+                <div class="project-content">
+                    <div class="project-tag project-tag-web">Web App</div>
+                    <h3 class="project-title">E-Commerce Platform</h3>
+                    <p class="project-description">
+                        Complete e-commerce solution with modern design and seamless shopping experience.
+                    </p>
+                    <div class="project-technologies">
+                        <span class="tech-tag">E-Commerce</span>
+                        <span class="tech-tag">Web Design</span>
+                        <span class="tech-tag">UX</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Portfolio Website -->
+            <div class="project-card" data-category="websites" data-behance="https://www.behance.net/gallery/123456793/Creative-Portfolio-Website">
+                <div class="project-image">
+                    <div class="image-placeholder">
+                        <p class="placeholder-text">Portfolio Image</p>
+                        <p class="placeholder-size">400x300px</p>
+                    </div>
+                </div>
+                <div class="project-content">
+                    <div class="project-tag project-tag-website">Websites</div>
+                    <h3 class="project-title">Portfolio Website</h3>
+                    <p class="project-description">
+                        Creative portfolio website with modern interactions and clean design.
+                    </p>
+                    <div class="project-technologies">
+                        <span class="tech-tag">Portfolio</span>
+                        <span class="tech-tag">Web Design</span>
+                        <span class="tech-tag">Creative</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Landing Page Design -->
+            <div class="project-card" data-category="websites" data-behance="https://www.behance.net/gallery/123456794/High-Converting-Landing-Page">
+                <div class="project-image">
+                    <div class="image-placeholder">
+                        <p class="placeholder-text">Landing Page Image</p>
+                        <p class="placeholder-size">400x300px</p>
+                    </div>
+                </div>
+                <div class="project-content">
+                    <div class="project-tag project-tag-website">Websites</div>
+                    <h3 class="project-title">Landing Page Design</h3>
+                    <p class="project-description">
+                        High-converting landing page with clean design and effective call-to-actions.
+                    </p>
+                    <div class="project-technologies">
+                        <span class="tech-tag">Landing</span>
+                        <span class="tech-tag">Conversion</span>
+                        <span class="tech-tag">Marketing</span>
+                    </div>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
- <!-- Projects Section -->
-    <section id="projects">
-        <div class="container">
-            <!-- Category Filters -->
-            <div class="category-filters">
-                <button class="filter-btn active" data-category="mobile">Mobile Applications</button>
-                <button class="filter-btn" data-category="website">Websites</button>
-                <button class="filter-btn" data-category="webapp">Web Apps</button>
+<!-- Footer Section -->
+<footer class="footer-section" id="contact">
+    <div class="footer-container">
+        <!-- Footer Content Grid -->
+        <div class="footer-grid">
+            <!-- Brand Column -->
+            <div class="footer-brand">
+                <h3 class="footer-brand-title">Andrei Doca</h3>
+                <p class="footer-brand-description">
+                    UI/UX Product Designer passionate about creating intuitive digital experiences. I specialize in user-centered design and brand identity for innovative products. Based in Romania, working with clients worldwide.
+                </p>
+                <div class="footer-contact">
+                    <div class="footer-contact-item">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                            <polyline points="22,6 12,13 2,6"/>
+                        </svg>
+                        <span>andreitiberiu.doca@gmail.com</span>
+                    </div>
+                    <div class="footer-contact-item">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                            <circle cx="12" cy="10" r="3"/>
+                        </svg>
+                        <span>Oradea, Romania</span>
+                    </div>
+                    <div class="footer-contact-item">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                        </svg>
+                        <span>Available to work</span>
+                    </div>
+                </div>
             </div>
-            <!-- Project Grid -->
-            <div class="project-container">
-                <div class="project-grid">
-                    <!-- Mobile Application Cards -->
-                    <div class="project-card mobile" data-modal-id="modal-1">
-                        <img src="assets/images/Mobile_Picture_1.png" alt="Mobile App 1">
-                    </div>
-                     <div class="project-card mobile" data-modal-id="modal-2">
-                        <img src="assets/images/Mobile_Picture_2.png" alt="Mobile App 2">
-                    </div>
-                    <div class="project-card mobile" data-modal-id="modal-3">
-                        <img src="assets/images/Mobile_Picture_3.jpg" alt="Mobile App 3">
-                    </div>
-                    <!-- Website Cards -->
-                    <div class="project-card website" data-modal-id="modal-4">
-                        <img src="assets/images/Desktop_Picture_1.png" alt="Website 1">
-                    </div>
-                    <div class="project-card website" data-modal-id="modal-5">
-                        <img src="assets/images/Desktop_Picture_2.png" alt="Website 2">
-                    </div>
-                    <!-- Web App Cards -->
-                    <div class="project-card webapp" data-modal-id="modal-6">
-                        <img src="assets/images/WebApp_Picture_1.jpg" alt="Web App 1">
-                    </div>
-                    <div class="project-card webapp" data-modal-id="modal-7">
-                        <img src="assets/images/ComingSoon1.png" alt="Web App 2">
-                    </div>
+
+            <!-- Navigation Column -->
+            <div class="footer-column">
+                <h4 class="footer-column-title">Navigation</h4>
+                <div class="footer-links">
+                    <a href="#home" class="footer-link">Home</a>
+                    <a href="#about" class="footer-link">About</a>
+                    <a href="#services" class="footer-link">Services</a>
+                    <a href="#projects" class="footer-link">Projects</a>
+                    <a href="#contact" class="footer-link">Contact</a>
+                </div>
+            </div>
+
+            <!-- Services Column -->
+            <div class="footer-column">
+                <h4 class="footer-column-title">Services</h4>
+                <div class="footer-links">
+                    <a href="#services" class="footer-link">UI/UX Design</a>
+                    <a href="#services" class="footer-link">Product Design</a>
+                    <a href="#services" class="footer-link">Brand Identity</a>
+                    <a href="#services" class="footer-link">Design Systems</a>
+                    <a href="#services" class="footer-link">User Research</a>
+                    <a href="#services" class="footer-link">Prototyping</a>
+                </div>
+            </div>
+
+            <!-- Follow Me Column -->
+            <div class="footer-column">
+                <h4 class="footer-column-title">Follow me</h4>
+                <div class="footer-social-icons">
+                    <a href="https://linkedin.com/in/andreidoca" target="_blank" rel="noopener noreferrer" class="footer-social-icon" title="LinkedIn">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+                            <rect width="4" height="12" x="2" y="9"/>
+                            <circle cx="4" cy="4" r="2"/>
+                        </svg>
+                    </a>
+                    <a href="https://behance.net/andreidoca" target="_blank" rel="noopener noreferrer" class="footer-social-icon" title="Behance">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M7.5 11.5C7.5 10.1193 8.61929 9 10 9H14C15.3807 9 16.5 10.1193 16.5 11.5C16.5 12.8807 15.3807 14 14 14H10C8.61929 14 7.5 12.8807 7.5 11.5Z"/>
+                            <path d="M10 5H14C16.2091 5 18 6.79086 18 9C18 10.1046 17.5523 11.1046 16.8284 11.8284C17.5523 12.5523 18 13.5523 18 14.6569C18 17.5523 15.5523 20 12.6569 20H7.5V5H10Z"/>
+                            <path d="M15.5 6.5H20.5"/>
+                            <path d="M15.5 4.5H20.5"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+        
+        <!-- Footer Bottom Section -->
+        <div class="footer-bottom">
+            <div class="footer-bottom-content">
+                <div class="footer-copyright">
+                    <p>© 2025 Andrei Doca All Rights Reserved</p>
                 </div>
             </div>
         </div>
-    </section>
-
-    <!-- Modal Structure -->
-    <div id="modal-overlay" class="modal-overlay">
-        <div class="modal-content">
-            <button class="close-modal">&times;</button>
-            <div id="modal-body"></div> <!-- Dynamic content will be injected here -->
-        </div>
     </div>
-
-    <!-- Hidden Modal Content -->
-    <div id="modal-1" class="hidden-modal">
-        <img src="assets/images/Frame 268.jpg" alt="Modal Image 1 - Mobile App Design">
-    </div>
-    <div id="modal-2" class="hidden-modal">
-        <img src="assets/images/Frame 267.jpg" alt="Modal Image 2 - Mobile App Design">
-    </div>
-     <div id="modal-3" class="hidden-modal">
-        <img src="assets/images/Frame 269-1.png" alt="Modal Image 3 - Mobile App Design">
-    </div>
-    <div id="modal-4" class="hidden-modal">
-        <img src="assets/images/website1.png" alt="Modal Image 4 - Website Design">
-    </div>
-    <div id="modal-5" class="hidden-modal">
-        <img src="assets/images/website2.png" alt="Modal Image 5 - Website Design">
-    </div> 
-    <div id="modal-6" class="hidden-modal">
-        <img src="assets/images/WebApp1.jpg" alt="Modal Image 6 - Web App">
-    </div> 
-
-<!-- Collaboration Section -->
-<!-- <section id="collaboration">
-    <div class="container">
-        <h2>Let’s Collaborate!</h2>
-        <p>
-            I’m always open to new opportunities and collaborations. Whether you have a project in mind or just want to chat about design, feel free to reach out. Let’s create something amazing together!
-        </p>
-        <a href="#contact" class="cta-button">Get in Touch</a>
-    </div>
-</section> -->
-
-    <!-- Footer Section -->
-    <footer id="footer">
-        <div class="container">
-            <!-- Footer Content -->
-            <div class="footer-content">
-                <!-- Contact Information -->
-                <div class="footer-section">
-                    <h4>Contact</h4>
-                    <p>Email: andreitiberiu.doca@gmail.com</p>
-                    <p>Phone: +40 75 780 6352</p>
-                </div>
-                <!-- Useful Links -->
-                <div class="footer-section">
-                    <h4>Quick Links</h4>
-                    <ul>
-                        <li><a href="#about">About</a></li>
-                        <li><a href="#projects">Projects</a></li>
-                        <li><a href="#contact">Contact</a></li>
-                    </ul>
-                </div>
-                <!-- Social Media -->
-                <div class="footer-section">
-                    <h4>Follow Me</h4>
-                    <div class="social-media">
-                        <a href="https://www.linkedin.com/in/andreidoca/" target="_blank" aria-label="LinkedIn Profile">
-                            <img src="assets/icons/Linkedin-icon.svg" alt="LinkedIn Icon">
-                        </a>
-                        <a href="https://www.behance.net/DocaAndrei" target="_blank" aria-label="Behance Profile">
-                            <img src="assets/icons/Behance-icon.svg" alt="Behance Icon">
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <!-- Copyright -->
-            <div class="footer-copyright">
-                <p>&copy; 2025 Andrei Doca. All rights reserved.</p>
-            </div>
-        </div>
-    </footer>
+</footer>
 
     <!-- JavaScript Files -->
+    <script src="js/about.js"></script>
+    <script src="js/footer.js"></script>
     <script src="js/header.js"></script>
+    <script src="js/hero.js"></script>
     <script src="js/projects.js"></script>
+    <script src="js/services.js"></script>
 </body>
 </html>

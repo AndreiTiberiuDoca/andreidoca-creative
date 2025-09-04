@@ -1,116 +1,139 @@
-document.addEventListener("DOMContentLoaded", () => {
-    // Select elements
-    const projectCards = document.querySelectorAll(".project-card");
-    const modalOverlay = document.getElementById("modal-overlay");
-    const modalBody = document.getElementById("modal-body");
-    const closeModalButton = document.querySelector(".close-modal");
+// Projects section functionality
 
-    // Function to block scrolling on the page
-    const blockScroll = () => {
-        document.body.style.overflow = "hidden"; // Disable scrolling
-    };
+// Filter functionality
+const filterBtns = document.querySelectorAll('.filter-btn');
+const projectCards = document.querySelectorAll('.project-card');
 
-    // Function to unblock scrolling on the page
-    const unblockScroll = () => {
-        document.body.style.overflow = ""; // Enable scrolling
-    };
-
-    // Open modal when clicking on a project card
-    projectCards.forEach((card) => {
-        card.addEventListener("click", () => {
-            const modalId = card.getAttribute("data-modal-id"); // Get the modal ID from the clicked card
-            const modalContent = document.getElementById(modalId).innerHTML; // Get the modal content
-            modalBody.innerHTML = modalContent; // Inject the content into the modal
-            modalOverlay.style.display = "block"; // Show the modal
-            blockScroll(); // Block scrolling on the page
+filterBtns.forEach(btn => {
+    btn.addEventListener('click', function() {
+        // Remove active class from all buttons
+        filterBtns.forEach(filterBtn => {
+            filterBtn.classList.remove('active');
         });
-    });
-
-    // Close modal when clicking the close button
-    closeModalButton.addEventListener("click", () => {
-        modalOverlay.style.display = "none"; // Hide the modal
-        modalBody.innerHTML = ""; // Clear the modal content
-        unblockScroll(); // Unblock scrolling on the page
-    });
-
-    // Close modal when clicking outside the modal content
-    modalOverlay.addEventListener("click", (event) => {
-        if (event.target === modalOverlay) {
-            modalOverlay.style.display = "none"; // Hide the modal
-            modalBody.innerHTML = ""; // Clear the modal content
-            unblockScroll(); // Unblock scrolling on the page
-        }
-    });
-
-    // Optional: Close modal when pressing the Escape key
-    document.addEventListener("keydown", (event) => {
-        if (event.key === "Escape" && modalOverlay.style.display === "block") {
-            modalOverlay.style.display = "none"; // Hide the modal
-            modalBody.innerHTML = ""; // Clear the modal content
-            unblockScroll(); // Unblock scrolling on the page
-        }
+        
+        // Add active class to clicked button
+        this.classList.add('active');
+        
+        // Get filter value
+        const filterValue = this.getAttribute('data-filter');
+        
+        // Filter projects
+        filterProjects(filterValue);
     });
 });
 
-document.addEventListener("DOMContentLoaded", () => {
-    // Select elements
-    const filterButtons = document.querySelectorAll(".filter-btn");
-    const projectCards = document.querySelectorAll(".project-card");
-
-    // Add event listeners to filter buttons
-    filterButtons.forEach((button) => {
-        button.addEventListener("click", () => {
-            // Remove 'active' class from all buttons
-            filterButtons.forEach((btn) => btn.classList.remove("active"));
-
-            // Add 'active' class to the clicked button
-            button.classList.add("active");
-
-            // Get the selected category
-            const selectedCategory = button.getAttribute("data-category");
-
-            // Filter project cards based on the selected category
-            projectCards.forEach((card) => {
-                if (card.classList.contains(selectedCategory)) {
-                    card.classList.add("show");
-                } else {
-                    card.classList.remove("show");
-                }
-            });
-        });
+function filterProjects(filter) {
+    projectCards.forEach(card => {
+        const category = card.getAttribute('data-category');
+        
+        if (filter === 'all' || category === filter) {
+            card.classList.remove('hidden');
+            // Add entrance animation
+            setTimeout(() => {
+                card.style.opacity = '1';
+                card.style.transform = 'scale(1)';
+            }, 100);
+        } else {
+            card.classList.add('hidden');
+            card.style.opacity = '0';
+            card.style.transform = 'scale(0.8)';
+        }
     });
-
-    // Initialize by showing cards from the first category (Mobile Applications)
-    filterButtons[0].click(); // Simulate click on the first button
-});
-
-// Select the modal content and overlay
-const modalOverlay = document.getElementById('modal-overlay');
-const modalBody = document.getElementById('modal-body');
-
-// Function to reset modal scroll position
-function resetModalScroll() {
-    if (modalBody) {
-        modalBody.scrollTop = 0; // Resetează scroll-ul la 0
-    }
 }
 
-// Dacă folosești un eveniment de click pe carduri pentru a deschide modalul:
-document.querySelectorAll('.project-card').forEach(card => {
-    card.addEventListener('click', () => {
-        const modalId = card.getAttribute('data-modal-id');
-        const modalContent = document.getElementById(modalId);
-        if (modalContent) {
-            modalBody.innerHTML = '';
-            modalBody.appendChild(modalContent.cloneNode(true));
-            modalOverlay.style.display = 'flex';
-            resetModalScroll(); // Resetează scroll-ul la fiecare deschidere
+// Project card hover animations
+projectCards.forEach(card => {
+    card.addEventListener('mouseenter', function() {
+        const image = this.querySelector('.project-image');
+        if (image) {
+            image.style.transform = 'scale(1.05)';
+            image.style.transition = 'transform 0.3s ease';
+        }
+    });
+    
+    card.addEventListener('mouseleave', function() {
+        const image = this.querySelector('.project-image');
+        if (image) {
+            image.style.transform = 'scale(1)';
         }
     });
 });
 
-// Eveniment pentru butonul de închidere
-document.querySelector('.close-modal').addEventListener('click', () => {
-    modalOverlay.style.display = 'none';
+// Tech tag hover animations
+const techTags = document.querySelectorAll('.tech-tag');
+techTags.forEach(tag => {
+    tag.addEventListener('mouseenter', function() {
+        this.style.transform = 'translateY(-2px)';
+        this.style.transition = 'transform 0.2s ease';
+        this.style.backgroundColor = '#e2e8f0';
+    });
+    
+    tag.addEventListener('mouseleave', function() {
+        this.style.transform = 'translateY(0)';
+        this.style.backgroundColor = '#f1f5f9';
+    });
 });
 
+// Intersection Observer for scroll animations
+const projectsObserverOptions = {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+};
+
+const projectsObserver = new IntersectionObserver(function(entries) {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            if (entry.target.classList.contains('project-card')) {
+                entry.target.style.opacity = '1';
+                entry.target.style.transform = 'translateY(0)';
+            }
+        }
+    });
+}, projectsObserverOptions);
+
+// Initialize scroll animations when DOM is ready
+document.addEventListener('DOMContentLoaded', function() {
+    // Set initial states for animation
+    projectCards.forEach((card, index) => {
+        card.style.opacity = '0';
+        card.style.transform = 'translateY(40px)';
+        card.style.transition = `opacity 0.8s ease ${index * 0.1}s, transform 0.8s ease ${index * 0.1}s`;
+        projectsObserver.observe(card);
+    });
+});
+
+// Project card click handler - Behance links
+projectCards.forEach(card => {
+    card.addEventListener('click', function(e) {
+        // Prevent default behavior
+        e.preventDefault();
+        
+        // Get Behance URL from data attribute
+        const behanceUrl = this.getAttribute('data-behance');
+        const title = this.querySelector('.project-title').textContent;
+        
+        if (behanceUrl) {
+            // Add click animation before opening link
+            this.style.transform = 'scale(0.98)';
+            this.style.transition = 'transform 0.1s ease';
+            
+            setTimeout(() => {
+                this.style.transform = '';
+                // Open Behance link in new tab
+                window.open(behanceUrl, '_blank', 'noopener,noreferrer');
+            }, 100);
+            
+            console.log(`Opening project: ${title} - ${behanceUrl}`);
+        } else {
+            console.log(`No Behance link found for project: ${title}`);
+        }
+    });
+    
+    // Add cursor pointer style to indicate clickable
+    card.style.cursor = 'pointer';
+    
+    // Add hover effect for better UX
+    card.addEventListener('mouseenter', function() {
+        this.style.transition = 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)';
+    });
+});

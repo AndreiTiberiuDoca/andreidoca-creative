@@ -1,107 +1,173 @@
-document.addEventListener("DOMContentLoaded", () => {
-    // Select elements
-    const navLinkElements = document.querySelectorAll("nav ul li a");
-    const mobileMenu = document.getElementById("mobile-menu");
-    const navLinks = document.querySelector(".nav-links");
-    const header = document.querySelector('header');
-    const sections = document.querySelectorAll("section");
+// Header functionality
 
-    // Function to update the active link
-    const updateActiveLink = () => {
-        let currentSection = "";
+// Mobile menu toggle functionality
+document.addEventListener('DOMContentLoaded', function() {
+    // Use setTimeout to ensure HTML is loaded
+    setTimeout(function() {
+        const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+        const navMobile = document.getElementById('nav-mobile');
 
-        // Check if we are at the top of the page
-        if (window.scrollY < 10) {
-            currentSection = "about"; // Hardcode "about" as the active section
-        } else {
-            // Otherwise, detect the current section based on scroll position
-            let lastSection = null; // Track the last visible section
-            sections.forEach((section) => {
-                const sectionTop = section.offsetTop;
-                const sectionHeight = section.clientHeight;
+        console.log('Mobile toggle button:', mobileMenuToggle);
+        console.log('Mobile nav:', navMobile);
 
-                // Adjust the threshold to account for the sticky header
-                if (window.scrollY >= sectionTop - sectionHeight / 3) {
-                    lastSection = section; // Update the last visible section
+        if (mobileMenuToggle && navMobile) {
+            mobileMenuToggle.addEventListener('click', function() {
+                console.log('Mobile menu clicked!');
+                mobileMenuToggle.classList.toggle('active');
+                navMobile.classList.toggle('active');
+                
+                // Prevent body scrolling when menu is open
+                if (navMobile.classList.contains('active')) {
+                    document.body.style.overflow = 'hidden';
+                } else {
+                    document.body.style.overflow = '';
                 }
             });
-
-            // Set the current section to the last visible one
-            if (lastSection) {
-                currentSection = lastSection.getAttribute("id");
-            }
-        }
-
-        console.log("Current Section:", currentSection); // Debugging output
-
-        // Remove 'active' class from all links
-        navLinkElements.forEach((link) => {
-            link.classList.remove("active");
-        });
-
-        // Add 'active' class to the corresponding link
-        const activeLink = document.querySelector(`nav ul li a[href="#${currentSection}"]`);
-        if (activeLink) {
-            activeLink.classList.add("active");
-        }
-    };
-
-    // Initial call to set the active link on page load
-    updateActiveLink();
-
-    // Add scroll event listener to update the active link
-    window.addEventListener("scroll", updateActiveLink);
-
-    // Add shadow to the header when scrolled
-    window.addEventListener("scroll", () => {
-        if (window.scrollY > 0) {
-            header.classList.add('scrolled');
         } else {
-            header.classList.remove('scrolled');
+            console.error('Mobile menu elements not found!');
         }
+    }, 100);
+});
+
+// Close mobile menu when clicking on a link
+const mobileNavLinks = document.querySelectorAll('.nav-mobile-link');
+mobileNavLinks.forEach(link => {
+    link.addEventListener('click', function() {
+        mobileMenuToggle.classList.remove('active');
+        navMobile.classList.remove('active');
+        document.body.style.overflow = '';
     });
+});
 
-    // Smooth scrolling with offset for anchor links
-    navLinkElements.forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            e.preventDefault(); // Prevent default anchor behavior
-
-            const targetId = this.getAttribute('href').substring(1); // Get the target section ID
-
-            if (targetId === 'about') {
-                // Special case for "About": Scroll to the top of the page
+// Smooth scrolling for navigation links INCLUDING logo
+const allNavLinks = document.querySelectorAll('.nav-link, .nav-mobile-link, .logo-link');
+allNavLinks.forEach(link => {
+    link.addEventListener('click', function(e) {
+        e.preventDefault();
+        
+        const href = this.getAttribute('href');
+        if (href.startsWith('#')) {
+            const targetSection = document.querySelector(href);
+            if (targetSection) {
+                const headerHeight = document.querySelector('.header').offsetHeight;
+                const targetPosition = targetSection.offsetTop - headerHeight - 20;
+                
                 window.scrollTo({
-                    top: 0,
+                    top: targetPosition,
                     behavior: 'smooth'
                 });
-            } else {
-                // Normal behavior for other sections
-                const targetElement = document.getElementById(targetId);
-
-                if (targetElement) {
-                    const offset = 80; // Adjust this value based on your header's height
-                    const elementPosition = targetElement.offsetTop - offset;
-
-                    // Scroll to the target position with smooth behavior
-                    window.scrollTo({
-                        top: elementPosition,
-                        behavior: 'smooth'
-                    });
-                }
             }
-        });
-    });
-
-    // Toggle mobile menu
-    mobileMenu.addEventListener("click", () => {
-        navLinks.classList.toggle("active");
-
-        // Change the image source based on the current state
-        const img = mobileMenu.querySelector('img');
-        if (navLinks.classList.contains("active")) {
-            img.src = "assets/icons/Menu-Hamburger-Opened.svg"; // Opened state
-        } else {
-            img.src = "assets/icons/Menu-Hamburger-Default.svg"; // Default state
+        }
+        
+        // Close mobile menu if open when clicking logo
+        const navMobile = document.getElementById('nav-mobile');
+        const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+        if (navMobile && navMobile.classList.contains('active')) {
+            mobileMenuToggle.classList.remove('active');
+            navMobile.classList.remove('active');
+            document.body.style.overflow = '';
         }
     });
+});
+
+// Header scroll effect
+const header = document.querySelector('.header');
+let lastScrollTop = 0;
+
+window.addEventListener('scroll', function() {
+    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    
+    // Add scrolled class when scrolling down
+    if (scrollTop > 10) {
+        header.classList.add('scrolled');
+    } else {
+        header.classList.remove('scrolled');
+    }
+    
+    lastScrollTop = scrollTop;
+});
+
+// CTA button functionality
+const ctaButtons = document.querySelectorAll('.cta-button');
+ctaButtons.forEach(button => {
+    button.addEventListener('click', function() {
+        // Scroll to contact section or open contact modal
+        const contactSection = document.querySelector('#contact');
+        if (contactSection) {
+            const headerHeight = document.querySelector('.header').offsetHeight;
+            const targetPosition = contactSection.offsetTop - headerHeight - 20;
+            
+            window.scrollTo({
+                top: targetPosition,
+                behavior: 'smooth'
+            });
+        }
+        
+        // Close mobile menu if open
+        if (navMobile && navMobile.classList.contains('active')) {
+            mobileMenuToggle.classList.remove('active');
+            navMobile.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+    });
+});
+
+// Active nav link highlighting
+function updateActiveNavLink() {
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('.nav-link, .nav-mobile-link, .logo-link');
+    
+    let currentSection = '';
+    const scrollPosition = window.scrollY + 150; // Adjusted offset for better detection
+    
+    // Check if we're at the top of the page (show home as active)
+    if (window.scrollY < 100) {
+        currentSection = 'home';
+    } else {
+        // Find the current section based on scroll position
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop;
+            const sectionHeight = section.offsetHeight;
+            
+            if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+                currentSection = section.getAttribute('id');
+            }
+        });
+    }
+    
+    // Update nav links active state (including logo)
+    navLinks.forEach(link => {
+        link.classList.remove('active');
+        const linkHref = link.getAttribute('href');
+        if (linkHref === `#${currentSection}`) {
+            link.classList.add('active');
+        }
+    });
+}
+
+// Update active nav link on scroll and page load
+window.addEventListener('scroll', updateActiveNavLink);
+window.addEventListener('load', updateActiveNavLink);
+document.addEventListener('DOMContentLoaded', updateActiveNavLink);
+
+// Close mobile menu when clicking outside
+document.addEventListener('click', function(e) {
+    if (navMobile && navMobile.classList.contains('active')) {
+        if (!navMobile.contains(e.target) && !mobileMenuToggle.contains(e.target)) {
+            mobileMenuToggle.classList.remove('active');
+            navMobile.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+    }
+});
+
+// Close mobile menu on window resize
+window.addEventListener('resize', function() {
+    if (window.innerWidth > 768) {
+        if (navMobile && navMobile.classList.contains('active')) {
+            mobileMenuToggle.classList.remove('active');
+            navMobile.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+    }
 });

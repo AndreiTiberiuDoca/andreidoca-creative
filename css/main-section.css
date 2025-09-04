@@ -1,0 +1,172 @@
+/* Main CTA Section */
+#main-cta {
+    background-color: var(--neutral-1); /* White background */
+    padding: 3.75rem 0; /* Add vertical padding for spacing */
+    display: flex; /* Use Flexbox for layout */
+    justify-content: center; /* Center align horizontally */
+    align-items: center; /* Center align vertically */
+    width: 100%; /* Ensure the section spans the full width */
+    min-height: 60rem; /* 960px / 16 = 60rem */
+}
+
+#main-cta .container {
+    max-width: 75rem; /* 1200px / 16 = 75rem */
+    margin: 0 auto; /* Center the container */
+    display: flex; /* Use Flexbox for layout */
+    gap: 2.5rem; /* 40px / 16 = 2.5rem */
+    align-items: center; /* Vertically align items */
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+    
+}
+
+/* Text Block Styling */
+.text-block {
+    flex: 1; /* Take up available space */
+    text-align: left; /* Align text to the left */
+}
+
+/* Tag Styling */
+.tag {
+    font-size: 0.875rem; /* 14px / 16 = 0.875rem */
+    font-weight: bold; /* Bold text */
+    color: var(--neutral-1); /* White text for contrast */
+    background-color: var(--geekblue-6); /* Geekblue background */
+    padding: 0.3125rem 0.625rem; /* 5px / 16 = 0.3125rem, 10px / 16 = 0.625rem */
+    border-radius: 1rem; /* 16px / 16 = 1rem */
+    display: inline-block; /* Make it an inline element */
+    margin-bottom: 0.3125rem; /* 5px / 16 = 0.3125rem */
+}
+
+/* Header Styling */
+#main-cta h1 {
+    font-size: 3rem; /* 48px / 16 = 3rem */
+    color: var(--neutral-10); /* Dark neutral text */
+    padding: 0.5rem 0 1rem 0; /* Top: 8px / 16 = 0.5rem, Bottom: 32px / 16 = 2rem */
+    margin: 0; /* Remove all default margins */
+    margin-block-end: 0; /* Explicitly remove bottom margin */
+}
+
+/* Paragraph Styling */
+#main-cta p {
+    font-size: 1.25rem; /* 16px */
+    color: var(--neutral-7); /* Neutral gray for readability */
+    line-height: 1.6; /* Improve readability with line height */
+    margin: 0; /* Remove all default margins */
+    margin-block-end: 0; /* Explicitly remove bottom margin */
+    padding-bottom: 2rem; /* Remove bottom padding */
+}
+
+/* Social Links Styling */
+.social-links {
+    display: flex; /* Arrange icons in a row */
+    gap: 1rem; /* Space between icons */
+    align-items: center; /* Vertically align icons */
+    justify-content: flex-start; /* Align icons to the left by default */
+}
+
+.social-links a {
+    text-decoration: none; /* Remove underline from links */
+}
+
+.social-links img {
+    width: 24px; /* Set a consistent size for the icons */
+    height: 24px; /* Maintain aspect ratio */
+    transition: transform 0.3s ease; /* Smooth scaling effect on hover */
+}
+
+/* Hover Effects */
+.social-links img:hover {
+    transform: scale(1.4); /* Slightly enlarge icons on hover */
+}
+
+/* Default Colors */
+.linkedin-icon img {
+    filter: grayscale(0%) brightness(1); /* Default LinkedIn color */
+}
+
+.behance-icon img {
+    filter: grayscale(0%) brightness(1); /* Default Behance color */
+}
+
+/* Hover Effects */
+.linkedin-icon:hover img {
+    filter: invert(38%) sepia(75%) saturate(3153%) hue-rotate(200deg) brightness(97%) contrast(93%);
+    /* This filter combination produces #2867B2 */
+}
+
+.behance-icon:hover img {
+    filter: invert(0%) sepia(0%) saturate(7489%) hue-rotate(200deg) brightness(100%) contrast(100%);
+    /* This filter combination produces #000000 */
+}
+
+/* Image Styling */
+.image {
+    flex: 1; /* Take up available space */
+    text-align: right; /* Align image to the right */
+}
+
+.image img {
+    max-width: 25rem; /* 400px / 16 = 25rem */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 0.5rem; /* 8px / 16 = 0.5rem */
+}
+
+/* Secondary Button Style for Download CV */
+.download-cv-btn {
+    display: inline-flex; /* Ensures consistent alignment */
+    align-items: center; /* Vertically centers the text */
+    justify-content: center; /* Horizontally centers the text */
+    height: 2.5rem; /* Fixed height of 32px */
+    padding: 0 1rem; /* Horizontal padding for spacing */
+    font-family: 'Work Sans', sans-serif;
+    font-size: 1rem; /* Consistent font size */
+    font-weight: bold;
+    color: var(--geekblue-6); /* Geekblue text */
+    background-color: var(--neutral-1); /* White background */
+    border: 2px solid var(--geekblue-6); /* 2px border in Geekblue */
+    border-radius: 4px; /* Rounded corners */
+    cursor: pointer;
+    text-decoration: none; /* Removes underline */
+    transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effect */
+}
+
+.download-cv-btn:hover {
+    background-color: var(--geekblue-6); /* Full Geekblue background on hover */
+    color: var(--neutral-1); /* White text on hover */
+    border-color: var(--geekblue-6); /* Keep border color consistent */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Subtle shadow on hover */
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+    #main-cta .container {
+        flex-direction: column; /* Stack elements vertically */
+        align-items: flex-start; /* Align items to the left */
+        padding: 0 1rem; /* Reduce padding on smaller screens */
+    }
+
+    .text-block {
+        padding-left: 0; /* Remove left padding on mobile */
+        text-align: left; /* Align text to the left */
+        order: 1; /* Place text block first */
+        padding: 0 1rem; /* Add horizontal padding for responsive design */
+    }
+
+    #main-cta p {
+        text-align: left; /* Align paragraph text to the left */  
+    }
+
+    .image {
+        padding-right: 0; /* Remove right padding on mobile */
+        text-align: center; /* Center align image */
+        order: 2; /* Place image block second */
+        margin-top: 1.5rem; /* Add spacing between text and image */
+    }
+
+    .image img {
+        max-width: 100%; /* Make the image responsive */
+        width: 100%; /* Ensure the image takes full width */
+        height: auto; /* Maintain aspect ratio */
+    }
+}
+

@@ -271,6 +271,12 @@
     border: 1px solid rgba(16, 185, 129, 0.2);
 }
 
+.project-tag-logos {
+    background-color: rgba(47, 16, 185, 0.1);
+    color: #052c96;
+    border: 1px solid rgba(27, 16, 185, 0.2);
+}
+
 .project-title {
     font-size: 1.25rem;
     font-weight: 700;

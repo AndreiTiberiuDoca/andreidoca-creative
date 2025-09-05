@@ -92,9 +92,13 @@
 
 .principle-card:hover .principle-icon {
     background-color: #2563eb;
-    color: #ffffff;
     transform: scale(1.1) rotate(5deg);
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.principle-card:hover .principle-icon img {
+    filter: brightness(0) invert(1);
+    transition: filter 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .principle-card:hover .principle-title {
@@ -115,6 +119,11 @@
     color: #2563eb;
     flex-shrink: 0;
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.principle-icon img {
+    filter: brightness(0) saturate(100%) invert(32%) sepia(75%) saturate(2632%) hue-rotate(217deg) brightness(95%) contrast(90%);
+    transition: filter 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* Principle Content */
@@ -263,7 +272,7 @@
         height: 2.25rem;
     }
     
-    .principle-icon svg {
+    .principle-icon img {
         width: 20px;
         height: 20px;
     }
@@ -314,7 +323,7 @@
         line-height: 1.5;
     }
     
-    .quote-icon svg {
+    .quote-icon img {
         width: 36px;
         height: 36px;
     }

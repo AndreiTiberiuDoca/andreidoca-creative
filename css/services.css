@@ -86,20 +86,30 @@
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+.service-card:hover .blue-icon {
+    background-color: #1e40af;
+}
+
+.service-card:hover .blue-icon img {
+    filter: brightness(0) invert(1);
+}
+
+.service-card:hover .purple-icon {
+    background-color: #7c3aed;
+}
+
+.service-card:hover .purple-icon img {
+    filter: brightness(0) invert(1);
+}
+
 .service-card:hover .service-title {
     color: #2563eb;
     transition: color 0.3s ease;
 }
 
-.service-card:hover .feature-tag {
-    transform: translateY(-2px);
-    transition: all 0.3s ease 0.1s;
-}
 
-.service-card:hover .service-icon-small {
-    transform: scale(1.15);
-    transition: all 0.3s ease 0.2s;
-}
+
+
 
 /* Both Cards - Same Width and Height */
 .primary-card, .secondary-card {
@@ -150,14 +160,26 @@
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+.service-icon img {
+    transition: filter 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
 .blue-icon {
     background-color: #dbeafe;
     color: #1e40af;
 }
 
+.blue-icon img {
+    filter: brightness(0) saturate(100%) invert(16%) sepia(78%) saturate(2832%) hue-rotate(223deg) brightness(90%) contrast(90%);
+}
+
 .purple-icon {
     background-color: #f3e8ff;
     color: #7c3aed;
+}
+
+.purple-icon img {
+    filter: brightness(0) saturate(100%) invert(25%) sepia(71%) saturate(2738%) hue-rotate(262deg) brightness(92%) contrast(96%);
 }
 
 /* Service Badges */
@@ -257,14 +279,26 @@
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+.service-icon-small img {
+    transition: filter 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
 .blue-icon-small {
     background-color: #eff6ff;
     color: #1e40af;
 }
 
+.blue-icon-small img {
+    filter: brightness(0) saturate(100%) invert(16%) sepia(78%) saturate(2832%) hue-rotate(223deg) brightness(90%) contrast(90%);
+}
+
 .purple-icon-small {
     background-color: #faf5ff;
     color: #7c3aed;
+}
+
+.purple-icon-small img {
+    filter: brightness(0) saturate(100%) invert(25%) sepia(71%) saturate(2738%) hue-rotate(262deg) brightness(92%) contrast(96%);
 }
 
 .service-info h4 {

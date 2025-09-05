@@ -20,18 +20,21 @@ if (viewWorkBtn) {
 // Download CV button functionality
 const downloadCvBtn = document.getElementById('download-cv-btn');
 if (downloadCvBtn) {
-    downloadCvBtn.addEventListener('click', function() {
-        // Add your CV download functionality here
-        // For now, we'll show an alert
-        alert('CV download will be implemented. Please add your CV file to the project.');
+    downloadCvBtn.addEventListener('click', function(e) {
+        e.preventDefault(); // Prevent default link behavior if it's an <a> tag
         
-        // Example of how to implement actual download:
-        // const link = document.createElement('a');
-        // link.href = '/path-to-your-cv.pdf';
-        // link.download = 'Andrei_Doca_CV.pdf';
-        // document.body.appendChild(link);
-        // link.click();
-        // document.body.removeChild(link);
+        // Create download link
+        const link = document.createElement('a');
+        link.href = './assets/cv/Andrei Doca - Product & UX UI Designer.pdf';
+        link.download = 'Andrei_Doca_CV.pdf'; // Custom filename for download
+        link.target = '_blank'; // Open in new tab as fallback
+        
+        // Append to body, click, and remove
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+        
+        console.log('✅ CV download initiated');
     });
 }
 

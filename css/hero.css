@@ -1,11 +1,15 @@
 /* Hero Section */
 .hero-section {
     width: 100%;
-    min-height: 90vh;
+    min-height: 100vh;
     display: flex;
     align-items: center;
     padding: 2rem;
     background-color: #ffffff;
+    margin: 0;
+    margin-bottom: 0;
+    margin-top: -80px; /* Pull up to account for fixed header padding */
+    padding-top: calc(2rem + 80px); /* Add header height to top padding */
 }
 
 .hero-container {
@@ -160,6 +164,7 @@
     font-family: 'Work Sans', sans-serif;
     position: relative;
     overflow: hidden;
+    text-decoration: none; /* Remove underline for link */
 }
 
 .btn-secondary:hover {
@@ -188,6 +193,7 @@
 .btn-secondary:hover .btn-icon {
     transform: translateX(4px);
     transition: transform 0.3s ease;
+    stroke: #2563eb; /* Make SVG blue on hover */
 }
 
 .btn-icon {
@@ -319,8 +325,10 @@
 
 @media (max-width: 768px) {
     .hero-section {
-        min-height: auto;
+        min-height: 100vh;
         padding: 2rem 1rem;
+        margin-top: -70px; /* Pull up to account for mobile header padding */
+        padding-top: calc(2rem + 70px); /* Add mobile header height to top padding */
     }
     
     .hero-container {

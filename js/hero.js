@@ -155,26 +155,7 @@ function animateFloatingDots() {
     });
 }
 
-// Statistics counter animation
-function animateCounters() {
-    const statNumbers = document.querySelectorAll('.stat-number');
-    
-    statNumbers.forEach(stat => {
-        const target = parseInt(stat.textContent);
-        const suffix = stat.textContent.includes('+') ? '+' : '';
-        let current = 0;
-        const increment = target / 30; // Animation duration control
-        
-        const timer = setInterval(() => {
-            current += increment;
-            if (current >= target) {
-                current = target;
-                clearInterval(timer);
-            }
-            stat.textContent = Math.floor(current) + suffix;
-        }, 50);
-    });
-}
+
 
 // Intersection Observer for animations
 const heroObserverOptions = {

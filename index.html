@@ -24,6 +24,7 @@
     <link rel="stylesheet" href="css/services.css">
     <link rel="stylesheet" href="css/projects.css">
     <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/testimonials.css">
 </head>
 
 <body>
@@ -52,7 +53,7 @@
                     <a href="#projects" class="nav-link">Projects</a>
                 </li>
                 <li class="nav-item">
-                    <a href="#contact" class="nav-link">Contact</a>
+                    <a href="#testimonials" class="nav-link">Testimonials</a>
                 </li>
             </ul>
         </nav>
@@ -84,7 +85,7 @@
                     <a href="#projects" class="nav-mobile-link">Projects</a>
                 </li>
                 <li class="nav-mobile-item">
-                    <a href="#contact" class="nav-mobile-link">Contact</a>
+                    <a href="#testimonials" class="nav-mobile-link">Testimonial</a>
                 </li>
             </ul>
             <div class="nav-mobile-cta">
@@ -566,6 +567,55 @@
     </div>
 </section>
 
+ <!-- Testimonials Section -->
+    <section id="testimonials" class="testimonials-section">
+        <div class="testimonials-container">
+            
+            <!-- Header -->
+            <div class="testimonials-header">
+                    <p class="section-subtitle">Client Testimonials</p>
+                
+                <h2 class="testimonials-title">What Clients Say</h2>
+                
+                <p class="testimonials-description">
+                    Real feedback from amazing clients who trusted me with their design projects. Their success is my inspiration.
+                </p>
+            </div>
+
+            <!-- Main Testimonials Container -->
+            <div class="testimonials-container-center">
+                
+                <!-- Featured Testimonial - Large Centered -->
+                <div class="testimonial-card featured-card" data-testimonial="0">
+                    <div class="testimonial-content">
+                        <p class="testimonial-text">
+                            "Andrei delivered exceptional UI/UX design work that exceeded our expectations. His attention to detail and user-centered approach transformed our product completely. Working with him was an absolute pleasure - he took our vision and turned it into something even better than we imagined."
+                        </p>
+                    </div>
+                    <div class="client-info">
+                        <div class="client-avatar">
+                            <div class="avatar-placeholder">SM</div>
+                        </div>
+                        <div class="client-details">
+                            <h4 class="client-name">Sarah Mitchell</h4>
+                            <p class="client-position">Product Manager</p>
+                            <p class="client-company">TechFlow Solutions</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Navigation Dots -->
+            <div class="testimonials-navigation">
+                <button class="nav-dot active" data-index="0" aria-label="View Sarah's testimonial"></button>
+                <button class="nav-dot" data-index="1" aria-label="View Michael's testimonial"></button>
+                <button class="nav-dot" data-index="2" aria-label="View Lisa's testimonial"></button>
+            </div>
+
+        </div>
+    </section>
+
 <!-- Footer Section -->
 <footer class="footer-section" id="contact">
     <div class="footer-container">
@@ -651,5 +701,6 @@
     <script src="js/hero.js"></script>
     <script src="js/projects.js"></script>
     <script src="js/services.js"></script>
+    <script src="js/testimonials.js"></script>
 </body>
 </html>

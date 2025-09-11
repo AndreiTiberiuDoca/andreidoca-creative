@@ -1,4 +1,16 @@
-// Hero section functionality
+// Hero section functionality - Vanilla JS
+
+// Debug function to reset animations (useful for development)
+function resetHeroAnimations() {
+    hasCounterAnimated = false;
+    hasFloatingElementsAnimated = false;
+    hasGeometricShapesAnimated = false;
+    hasFloatingDotsAnimated = false;
+    console.log('🔄 Hero animations reset - ready for testing');
+}
+
+// Make reset function available globally for debugging
+window.resetHeroAnimations = resetHeroAnimations;
 
 // View Work button functionality
 const viewWorkBtn = document.getElementById('view-work-btn');
@@ -155,7 +167,44 @@ function animateFloatingDots() {
     });
 }
 
+// Statistics counter animation - RUNS ONLY ONCE
+let hasCounterAnimated = false; // Flag to track if counter has already run
 
+function animateCounters() {
+    // Exit early if counter has already been animated
+    if (hasCounterAnimated) {
+        console.log('🎯 Counter already animated - skipping');
+        return;
+    }
+    
+    const statNumbers = document.querySelectorAll('.stat-number');
+    
+    // Mark as animated immediately to prevent multiple executions
+    hasCounterAnimated = true;
+    console.log('✨ Starting counter animation - FIRST TIME ONLY');
+    
+    statNumbers.forEach(stat => {
+        const target = parseInt(stat.textContent);
+        const suffix = stat.textContent.includes('+') ? '+' : '';
+        let current = 0;
+        const increment = target / 30; // Animation duration control
+        
+        const timer = setInterval(() => {
+            current += increment;
+            if (current >= target) {
+                current = target;
+                clearInterval(timer);
+            }
+            stat.textContent = Math.floor(current) + suffix;
+        }, 50);
+    });
+}
+
+// Global animation flags
+let hasHeroAnimated = false;
+let hasFloatingElementsAnimated = false;
+let hasGeometricShapesAnimated = false;
+let hasFloatingDotsAnimated = false;
 
 // Intersection Observer for animations
 const heroObserverOptions = {
@@ -166,7 +215,7 @@ const heroObserverOptions = {
 const heroObserver = new IntersectionObserver(function(entries) {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
-            // Animate hero content
+            // Animate hero content - always runs for smooth entrance
             const heroContent = entry.target.querySelector('.hero-content');
             const heroImage = entry.target.querySelector('.hero-image');
             
@@ -182,17 +231,32 @@ const heroObserver = new IntersectionObserver(function(entries) {
                 }, 200);
             }
             
-            // Start counter animation
+            // Start counter animation - ONLY ONCE
             setTimeout(animateCounters, 500);
             
-            // Animate floating elements
-            setTimeout(animateFloatingElements, 600);
+            // Animate floating elements - ONLY ONCE
+            if (!hasFloatingElementsAnimated) {
+                setTimeout(() => {
+                    animateFloatingElements();
+                    hasFloatingElementsAnimated = true;
+                }, 600);
+            }
             
-            // Animate geometric shapes
-            setTimeout(animateGeometricShapes, 800);
+            // Animate geometric shapes - ONLY ONCE
+            if (!hasGeometricShapesAnimated) {
+                setTimeout(() => {
+                    animateGeometricShapes();
+                    hasGeometricShapesAnimated = true;
+                }, 800);
+            }
             
-            // Animate floating dots
-            setTimeout(animateFloatingDots, 1000);
+            // Animate floating dots - ONLY ONCE
+            if (!hasFloatingDotsAnimated) {
+                setTimeout(() => {
+                    animateFloatingDots();
+                    hasFloatingDotsAnimated = true;
+                }, 1000);
+            }
         }
     });
 }, heroObserverOptions);
@@ -236,3 +300,17 @@ if (statusDot) {
         });
     }
 }
+
+/* 
+🎯 COUNTER BEHAVIOR:
+- Counter animația se execută DOAR o singură dată când ajungi prima oară pe pagină
+- Elementele floating, geometric shapes și dots se animează și ele doar o singură dată
+- Hero content fade-in se execută de fiecare dată pentru smooth transitions
+- Pentru debugging, poți folosi: resetHeroAnimations() în console
+
+✨ VANILLA JS IMPLEMENTATION:
+- Zero dependencies, pure JavaScript
+- Optimized performance cu flags pentru animații
+- Smooth user experience cu animații staggered
+- Responsive și compatibil cu toate browser-ele moderne
+*/

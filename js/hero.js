@@ -57,35 +57,124 @@ heroButtons.forEach(button => {
     });
 });
 
-// Profile image hover effect
-const profileImage = document.querySelector('.profile-image');
-if (profileImage) {
-    profileImage.addEventListener('mouseenter', function() {
-        this.style.transform = 'scale(1.05)';
-        this.style.transition = 'transform 0.3s ease';
+// Profile image container hover effects
+const imageContainerWrapper = document.querySelector('.image-container-wrapper');
+if (imageContainerWrapper) {
+    imageContainerWrapper.addEventListener('mouseenter', function() {
+        // All hover effects are handled by CSS :hover pseudo-classes
+        // This is just for additional JS-based effects if needed
         
-        // Animate decorative elements
-        const decorations = this.querySelectorAll('.decoration');
-        decorations.forEach((decoration, index) => {
+        // Add extra floating animation to dots
+        const floatingDots = this.querySelectorAll('.floating-dot');
+        floatingDots.forEach((dot, index) => {
             setTimeout(() => {
-                decoration.style.transform = 'scale(1.2) rotate(10deg)';
-                decoration.style.transition = 'transform 0.3s ease';
+                dot.style.animationDuration = '1.5s';
             }, index * 100);
+        });
+        
+        // Add extra rotation to geometric shapes
+        const geoShapes = this.querySelectorAll('.geo-shape');
+        geoShapes.forEach((shape, index) => {
+            setTimeout(() => {
+                if (shape.classList.contains('shape-2')) {
+                    shape.style.transform += ' rotate(180deg)';
+                }
+            }, index * 150);
         });
     });
     
-    profileImage.addEventListener('mouseleave', function() {
-        this.style.transform = 'scale(1)';
+    imageContainerWrapper.addEventListener('mouseleave', function() {
+        // Reset floating dots animation
+        const floatingDots = this.querySelectorAll('.floating-dot');
+        floatingDots.forEach(dot => {
+            dot.style.animationDuration = '3s';
+        });
         
-        // Reset decorative elements
-        const decorations = this.querySelectorAll('.decoration');
-        decorations.forEach(decoration => {
-            decoration.style.transform = 'scale(1) rotate(0deg)';
+        // Reset geometric shapes
+        const geoShapes = this.querySelectorAll('.geo-shape');
+        geoShapes.forEach(shape => {
+            if (shape.classList.contains('shape-2')) {
+                shape.style.transform = 'rotate(45deg)';
+            }
         });
     });
 }
 
+// Floating elements entrance animation
+function animateFloatingElements() {
+    const floatingElements = document.querySelectorAll('.floating-element');
+    
+    floatingElements.forEach((element, index) => {
+        // Set initial state
+        element.style.opacity = '0';
+        element.style.transform = 'scale(0.5) translateY(20px)';
+        element.style.transition = 'all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1)';
+        
+        // Animate in with staggered delay
+        setTimeout(() => {
+            element.style.opacity = '1';
+            element.style.transform = 'scale(1) translateY(0)';
+        }, 800 + (index * 150));
+    });
+}
 
+// Geometric shapes entrance animation
+function animateGeometricShapes() {
+    const geoShapes = document.querySelectorAll('.geo-shape');
+    
+    geoShapes.forEach((shape, index) => {
+        // Set initial state
+        shape.style.opacity = '0';
+        shape.style.transform += ' scale(0)';
+        shape.style.transition = 'all 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55)';
+        
+        // Animate in with staggered delay
+        setTimeout(() => {
+            shape.style.opacity = '0.6';
+            const currentTransform = shape.style.transform.replace('scale(0)', 'scale(1)');
+            shape.style.transform = currentTransform;
+        }, 1200 + (index * 200));
+    });
+}
+
+// Floating dots entrance animation
+function animateFloatingDots() {
+    const dots = document.querySelectorAll('.floating-dot');
+    
+    dots.forEach((dot, index) => {
+        // Set initial state
+        dot.style.opacity = '0';
+        dot.style.transform = 'scale(0)';
+        dot.style.transition = 'all 0.5s ease-out';
+        
+        // Animate in with staggered delay
+        setTimeout(() => {
+            dot.style.opacity = '0.7';
+            dot.style.transform = 'scale(1)';
+        }, 1000 + (index * 300));
+    });
+}
+
+// Statistics counter animation
+function animateCounters() {
+    const statNumbers = document.querySelectorAll('.stat-number');
+    
+    statNumbers.forEach(stat => {
+        const target = parseInt(stat.textContent);
+        const suffix = stat.textContent.includes('+') ? '+' : '';
+        let current = 0;
+        const increment = target / 30; // Animation duration control
+        
+        const timer = setInterval(() => {
+            current += increment;
+            if (current >= target) {
+                current = target;
+                clearInterval(timer);
+            }
+            stat.textContent = Math.floor(current) + suffix;
+        }, 50);
+    });
+}
 
 // Intersection Observer for animations
 const heroObserverOptions = {
@@ -114,6 +203,15 @@ const heroObserver = new IntersectionObserver(function(entries) {
             
             // Start counter animation
             setTimeout(animateCounters, 500);
+            
+            // Animate floating elements
+            setTimeout(animateFloatingElements, 600);
+            
+            // Animate geometric shapes
+            setTimeout(animateGeometricShapes, 800);
+            
+            // Animate floating dots
+            setTimeout(animateFloatingDots, 1000);
         }
     });
 }, heroObserverOptions);

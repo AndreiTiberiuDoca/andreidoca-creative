@@ -95,7 +95,7 @@
     </nav>
 </header>
 
- <!-- Hero Section -->
+<!-- Hero Section -->
 <section class="hero-section" id="home">
     <div class="hero-container">
         <!-- Left Content -->
@@ -117,20 +117,27 @@
 
             <!-- Description -->
             <p class="hero-description">
-                    I help teams build digital products that people actually want to use. From research to final design, I focus on solving real user problems with clean, thoughtful interfaces — because great design should feel effortless, not perfect.
+                 I help teams build digital products that people actually want to use. From research to final design, I focus on solving real user problems with clean, thoughtful interfaces — because great design should feel effortless, not perfect.
             </p>
 
             <!-- Action Buttons -->
             <div class="hero-actions">
                 <button class="btn-primary" id="view-work-btn">
                     <span>View My Work</span>
-                    <img src="assets/arrow_right_alt_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.svg" alt="Andrei Doca" class="profile-avatar" loading="lazy">
+                    <svg class="btn-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                        <polyline points="12,5 19,12 12,19"></polyline>
+                    </svg>
                 </button>
                 
-                <button class="btn-secondary" id="download-cv-btn">
-                    <img src="assets/download_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24 1.svg" alt="Andrei Doca" class="profile-avatar" loading="lazy">
+                <a href="./images/Andrei_Doca_CV.pdf" download="Andrei_Doca_CV.pdf" class="btn-secondary" id="download-cv-btn">
+                    <svg class="btn-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                        <polyline points="7,10 12,15 17,10"></polyline>
+                        <line x1="12" y1="15" x2="12" y2="3"></line>
+                    </svg>
                     <span>Download CV</span>
-                </button>
+                </a>
             </div>
 
             <!-- Statistics -->
@@ -152,15 +159,24 @@
 
         <!-- Right Content - Profile Image -->
         <div class="hero-image">
-            <div class="image-container">
+            <div class="image-container-wrapper">
+                
+                <!-- Background Gradient Blobs -->
+                <div class="gradient-blobs">
+                    <div class="gradient-blob-1"></div>
+                    <div class="gradient-blob-2"></div>
+                </div>
+
+                <!-- Profile Image Container - CLEAN pentru imagine -->
                 <div class="profile-image">
                     <!-- Profile image placeholder -->
                     <div class="image-placeholder">
+                    
                         <img src="assets/profile.jpg" alt="Andrei Doca" class="profile-avatar" loading="lazy">
                     </div>
                 </div>
-            </div>
-            <!-- FLOATING ELEMENTS - OUTSIDE image container -->
+
+                <!-- FLOATING ELEMENTS - OUTSIDE image container -->
                 
                 <!-- UI Element - Top Right (OUTSIDE) -->
                 <div class="floating-element ui-element">
@@ -225,9 +241,12 @@
                     <div class="geo-shape shape-3"></div>
                     <div class="geo-shape shape-4"></div>
                 </div>
+
+            </div>
         </div>
     </div>
 </section>
+
 <!-- About/Design Philosophy Section -->
 <section class="about-section" id="about">
     <div class="about-container">

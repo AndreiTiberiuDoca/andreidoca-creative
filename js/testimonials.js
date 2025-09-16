@@ -24,7 +24,7 @@ class TestimonialsManager {
                 position: "Recruitment Consultant",
                 company: "Qualigence International",
                 text: "Andrei is great to work with. The talent and passion he brings to the table are great addition to every project. His attention to detail and overall design process result in real customer satisfaction.",
-                avatar: "LD"
+                avatar: "GW"
             }
         ];
         

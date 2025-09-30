@@ -37,8 +37,8 @@ if (downloadCvBtn) {
         
         // Create download link
         const link = document.createElement('a');
-        link.href = './assets/cv/Andrei Doca - Product & UX UI Designer.pdf';
-        link.download = 'Andrei_Doca_CV.pdf'; // Custom filename for download
+        link.href = './assets/cv/Andrei Doca_CV.pdf';
+        link.download = 'Andrei Doca_CV.pdf'; // Custom filename for download
         link.target = '_blank'; // Open in new tab as fallback
         
         // Append to body, click, and remove

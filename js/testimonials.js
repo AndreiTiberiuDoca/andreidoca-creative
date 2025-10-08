@@ -15,7 +15,7 @@ class TestimonialsManager {
                 name: "Bogdan Negru", 
                 position: "COO, Co-founder",
                 company: "Liftup Solutions",
-                text: "Andrei consistently delivers high-quality digital graphics with a keen eye for detail and a creative, thoughtful approach. Always eager to learn and grow, they bring dedication and adaptability to every project — making them a strong and reliable asset to any team.",
+                text: "Andrei consistently delivers high-quality digital graphics with a keen eye for detail and a creative, thoughtful approach. Always eager to learn and grow, they bring dedication and adaptability to every project, making them a strong and reliable asset to any team.",
                 avatar: "BN"
             },
             {

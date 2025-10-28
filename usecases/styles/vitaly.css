@@ -1,15 +1,41 @@
-/* Reset and Base Styles */
+/* Vitality Project - Complete Stylesheet with Work Sans */
+/* Integrated base styles + project-specific styles for consistency */
+
+/* ============================================================================
+   RESET AND BASE STYLES
+   ============================================================================ */
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+html {
+    font-size: 16px;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Work Sans', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-color: #ffffff;
+    color: #111827;
+    line-height: 1.6;
+    font-weight: 400;
+}
+
+/* ============================================================================
+   TYPOGRAPHY
+   ============================================================================ */
+
 h1 {
     font-size: 3rem;
     font-weight: 700;
     line-height: 1.2;
     margin-bottom: 1rem;
+    color: #111827;
 }
 
 h2 {
@@ -44,6 +70,15 @@ img {
     display: block;
 }
 
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* ============================================================================
+   LAYOUT UTILITIES
+   ============================================================================ */
+
 /* Container */
 .container {
     max-width: 1280px;
@@ -51,7 +86,32 @@ img {
     padding: 0 1rem;
 }
 
-/* Back Button Floating */
+/* Separator */
+.separator {
+    max-width: 1280px;
+    margin: 0 auto;
+    height: 1px;
+    background-color: #e5e7eb;
+}
+
+/* Section */
+.section {
+    padding: 3rem 0;
+}
+
+.section-last {
+    padding-bottom: 5rem;
+}
+
+.section-description {
+    max-width: 48rem;
+    margin-bottom: 2rem;
+}
+
+/* ============================================================================
+   BACK BUTTON FLOATING
+   ============================================================================ */
+
 .back-button {
     position: fixed;
     bottom: 2rem;
@@ -59,6 +119,7 @@ img {
     padding: 0.875rem 1.5rem;
     background-color: #2563eb;
     color: white;
+    border: none;
     border-radius: 2rem;
     display: flex;
     align-items: center;
@@ -89,7 +150,10 @@ img {
     white-space: nowrap;
 }
 
-/* Hero Section */
+/* ============================================================================
+   HERO SECTION
+   ============================================================================ */
+
 .hero {
     padding: 3rem 0 4rem;
 }
@@ -116,6 +180,7 @@ img {
     color: #4b5563;
     max-width: 48rem;
     margin-bottom: 3rem;
+    line-height: 1.6;
 }
 
 .hero-image {
@@ -132,7 +197,10 @@ img {
     object-fit: cover;
 }
 
-/* Project Details */
+/* ============================================================================
+   PROJECT DETAILS
+   ============================================================================ */
+
 .project-details {
     padding: 3rem 0;
 }
@@ -162,29 +230,10 @@ img {
     font-weight: 500;
 }
 
-/* Separator */
-.separator {
-    max-width: 1280px;
-    margin: 0 auto;
-    height: 1px;
-    background-color: #e5e7eb;
-}
+/* ============================================================================
+   OVERVIEW GRID
+   ============================================================================ */
 
-/* Section */
-.section {
-    padding: 3rem 0;
-}
-
-.section-last {
-    padding-bottom: 5rem;
-}
-
-.section-description {
-    max-width: 48rem;
-    margin-bottom: 2rem;
-}
-
-/* Overview Grid */
 .overview-grid {
     display: grid;
     grid-template-columns: 1fr;
@@ -206,9 +255,14 @@ img {
 .overview-grid li {
     color: #4b5563;
     margin-bottom: 0.5rem;
+    font-size: 1rem;
+    line-height: 1.6;
 }
 
-/* Placeholder Image */
+/* ============================================================================
+   PLACEHOLDER IMAGES
+   ============================================================================ */
+
 .placeholder-image {
     width: 100%;
     aspect-ratio: 16 / 9;
@@ -229,6 +283,7 @@ img {
     font-size: 1.125rem;
     color: #9ca3af;
     margin-bottom: 0.5rem;
+    font-weight: 500;
 }
 
 .placeholder-subtitle {
@@ -236,7 +291,10 @@ img {
     color: #6b7280;
 }
 
-/* Process Grid */
+/* ============================================================================
+   PROCESS GRID & CARDS
+   ============================================================================ */
+
 .process-grid {
     display: grid;
     grid-template-columns: 1fr;
@@ -286,9 +344,13 @@ img {
 
 .process-card p {
     font-size: 0.9375rem;
+    line-height: 1.6;
 }
 
-/* Design Grid */
+/* ============================================================================
+   DESIGN GRID
+   ============================================================================ */
+
 .design-grid {
     display: grid;
     grid-template-columns: 1fr;
@@ -326,7 +388,10 @@ img {
     font-weight: 500;
 }
 
-/* Before/After Comparison */
+/* ============================================================================
+   BEFORE/AFTER COMPARISON
+   ============================================================================ */
+
 .before-after-container {
     position: relative;
     width: 100%;
@@ -336,6 +401,8 @@ img {
     background-color: #f3f4f6;
     cursor: ew-resize;
     user-select: none;
+    /* Permite scroll vertical pe mobile, dar permite drag orizontal pe slider */
+    touch-action: pan-y;
 }
 
 .before-image {
@@ -389,6 +456,8 @@ img {
     cursor: ew-resize;
     transform: translateX(-50%);
     transition: left 0.05s ease;
+    /* Permite doar interacțiune orizontală pe slider */
+    touch-action: pan-x;
 }
 
 .slider-button {
@@ -396,14 +465,28 @@ img {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 40px;
-    height: 40px;
+    width: 48px;
+    height: 48px;
     background-color: white;
     border-radius: 50%;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
     display: flex;
     align-items: center;
     justify-content: center;
+    /* Asigură că zona de touch este mai mare pe mobile */
+    touch-action: pan-x;
+}
+
+/* Mărește zona de touch pe mobile pentru slider button */
+@media (max-width: 767px) {
+    .slider-button {
+        width: 56px;
+        height: 56px;
+    }
+    
+    .slider {
+        width: 6px;
+    }
 }
 
 .slider-arrows {
@@ -419,7 +502,10 @@ img {
     background-color: #9ca3af;
 }
 
-/* Gallery */
+/* ============================================================================
+   GALLERY
+   ============================================================================ */
+
 .gallery {
     display: flex;
     flex-direction: column;
@@ -450,9 +536,13 @@ img {
     text-align: center;
     font-size: 0.9375rem;
     color: #6b7280;
+    line-height: 1.6;
 }
 
-/* Metrics Grid */
+/* ============================================================================
+   METRICS GRID
+   ============================================================================ */
+
 .metrics-grid {
     display: grid;
     grid-template-columns: 1fr;
@@ -500,7 +590,10 @@ img {
     color: #dc2626;
 }
 
-/* Learnings Grid */
+/* ============================================================================
+   LEARNINGS GRID
+   ============================================================================ */
+
 .learnings-grid {
     display: grid;
     grid-template-columns: 1fr;
@@ -511,7 +604,68 @@ img {
     margin-bottom: 0.75rem;
 }
 
-/* Responsive Design */
+.learning-item p {
+    line-height: 1.6;
+}
+
+/* ============================================================================
+   VITALITY PROJECT SPECIFIC STYLES
+   ============================================================================ */
+
+/* User Research Insights Grid */
+.insights-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.insight-card {
+    padding: 1.5rem;
+    background-color: #f9fafb;
+    border: 1px solid #e5e7eb;
+    border-radius: 0.5rem;
+    transition: all 0.3s ease;
+}
+
+.insight-card:hover {
+    background-color: #f3f4f6;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.insight-card p {
+    font-size: 0.9375rem;
+    color: #374151;
+    line-height: 1.6;
+}
+
+/* Highlighted section titles */
+.section-highlight {
+    color: #2563eb;
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+    display: block;
+}
+
+/* Key questions list */
+.key-questions {
+    margin-top: 1rem;
+    padding-left: 1rem;
+}
+
+.key-questions li {
+    color: #374151;
+    margin-bottom: 0.5rem;
+    font-size: 0.9375rem;
+    line-height: 1.6;
+    list-style: disc;
+}
+
+/* ============================================================================
+   RESPONSIVE DESIGN
+   ============================================================================ */
+
 @media (min-width: 640px) {
     .container {
         padding: 0 1.5rem;
@@ -519,6 +673,10 @@ img {
 
     h1 {
         font-size: 3.75rem;
+    }
+
+    .insights-grid {
+        grid-template-columns: repeat(2, 1fr);
     }
 }
 
@@ -559,5 +717,51 @@ img {
 
     .metrics-grid {
         grid-template-columns: repeat(4, 1fr);
+    }
+
+    .insights-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+/* ============================================================================
+   ACCESSIBILITY & POLISH
+   ============================================================================ */
+
+/* Focus states for keyboard navigation */
+*:focus {
+    outline: 2px solid #2563eb;
+    outline-offset: 2px;
+}
+
+button:focus,
+a:focus {
+    outline: 2px solid #2563eb;
+    outline-offset: 2px;
+}
+
+/* Selection styling */
+::selection {
+    background-color: rgba(37, 99, 235, 0.2);
+    color: #1e40af;
+}
+
+::-moz-selection {
+    background-color: rgba(37, 99, 235, 0.2);
+    color: #1e40af;
+}
+
+/* Smooth scrolling for reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+    
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
     }
 }

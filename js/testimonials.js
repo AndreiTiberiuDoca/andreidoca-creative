@@ -25,6 +25,14 @@ class TestimonialsManager {
                 company: "Qualigence International",
                 text: "Andrei is great to work with. The talent and passion he brings to the table are great addition to every project. His attention to detail and overall design process result in real customer satisfaction.",
                 avatar: "GW"
+            },
+               {
+                id: 3,
+                name: "Hassan Abusalih ",
+                position: "CEO @ FoodiZone",
+                company: "FoodiZone",
+                text: "I had the pleasure of working with Andrei on my recent project, and I couldn’t be happier with the experience. Andrei’s work ethic is truly impressive, he consistently went above and beyond to ensure everything was completed to the highest standard. His attention to detail, technical expertise, and creative problem-solving made a huge difference in the success of the project. I’m grateful for his dedication and highly recommend Andrei to anyone looking for a talented and reliable professional.",
+                avatar: "HA"
             }
         ];
         
@@ -106,11 +114,7 @@ class TestimonialsManager {
             this.navigation?.classList.add('animate');
         }, 500);
         
-        // Animate stats with counter
-        setTimeout(() => {
-            this.stats?.classList.add('animate');
-            this.animateStats();
-        }, 700);
+       
     }
     
     setupEventListeners() {

@@ -108,24 +108,33 @@ projectCards.forEach(card => {
         // Prevent default behavior
         e.preventDefault();
         
-        // Get Behance URL from data attribute
-        const behanceUrl = this.getAttribute('data-behance');
+        // Get URL from data attribute
+        const projectUrl = this.getAttribute('data-behance');
         const title = this.querySelector('.project-title').textContent;
         
-        if (behanceUrl) {
+        if (projectUrl) {
             // Add click animation before opening link
             this.style.transform = 'scale(0.98)';
             this.style.transition = 'transform 0.1s ease';
             
             setTimeout(() => {
                 this.style.transform = '';
-                // Open Behance link in new tab
-                window.open(behanceUrl, '_blank', 'noopener,noreferrer');
+                
+                // Check if it's an external link (starts with http:// or https://)
+                if (projectUrl.startsWith('http://') || projectUrl.startsWith('https://')) {
+                    // Open external link in new tab
+                    window.open(projectUrl, '_blank', 'noopener,noreferrer');
+                } else {
+                    // Save scroll position for return navigation (local pages only)
+                    sessionStorage.setItem('returnToProjects', 'true');
+                    // Navigate to local page in the same tab
+                    window.location.href = projectUrl;
+                }
             }, 100);
             
-            console.log(`Opening project: ${title} - ${behanceUrl}`);
+            console.log(`Opening project: ${title} - ${projectUrl}`);
         } else {
-            console.log(`No Behance link found for project: ${title}`);
+            console.log(`No link found for project: ${title}`);
         }
     });
     

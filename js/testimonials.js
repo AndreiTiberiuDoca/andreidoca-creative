@@ -31,7 +31,7 @@ class TestimonialsManager {
                 name: "Hassan Abusalih ",
                 position: "CEO @ FoodiZone",
                 company: "FoodiZone",
-                text: "I had the pleasure of working with Andrei on my recent project, and I couldn’t be happier with the experience. Andrei’s work ethic is truly impressive, he consistently went above and beyond to ensure everything was completed to the highest standard. His attention to detail, technical expertise, and creative problem-solving made a huge difference in the success of the project. I’m grateful for his dedication and highly recommend Andrei to anyone looking for a talented and reliable professional.",
+                text: "I had the pleasure of working with Andrei on my recent project, and I couldn’t be happier with the experience. Andrei’s work ethic is truly impressive, he consistently went above and beyond to ensure everything was completed to the highest standard. I’m grateful for his dedication and highly recommend Andrei to anyone looking for a talented and reliable professional.",
                 avatar: "HA"
             }
         ];

@@ -387,7 +387,6 @@ a {
     color: #374151;
     font-weight: 500;
 }
-
 /* ============================================================================
    BEFORE/AFTER COMPARISON
    ============================================================================ */
@@ -662,6 +661,53 @@ a {
     list-style: disc;
 }
 
+/* Mockups Grid */
+.mockups-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+    margin-top: 2rem;
+}
+
+.mockup-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.mockup-image {
+    width: 100%;
+    max-width: 320px;
+    margin-bottom: 1.5rem;
+    transition: transform 0.3s ease;
+}
+
+.mockup-card:hover .mockup-image {
+    transform: translateY(-8px);
+}
+
+.mockup-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 1rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.mockup-title {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: #111827;
+    margin-bottom: 0.5rem;
+}
+
+.mockup-description {
+    font-size: 0.9375rem;
+    color: #6b7280;
+    max-width: 320px;
+    line-height: 1.5;
+}
+
 /* ============================================================================
    RESPONSIVE DESIGN
    ============================================================================ */
@@ -676,6 +722,10 @@ a {
     }
 
     .insights-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .mockups-grid {
         grid-template-columns: repeat(2, 1fr);
     }
 }
@@ -721,6 +771,16 @@ a {
 
     .insights-grid {
         grid-template-columns: repeat(4, 1fr);
+    }
+
+    .mockups-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (min-width: 1280px) {
+    .mockups-grid {
+        grid-template-columns: repeat(5, 1fr);
     }
 }
 
